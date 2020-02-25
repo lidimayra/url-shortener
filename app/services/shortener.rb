@@ -20,6 +20,9 @@ class Shortener
   private
 
   def create_url(original_url)
-    Url.create(original: original_url, shortened: 'xpto')
+    Url.create(
+      original: original_url,
+      shortened: SecureRandom.hex.first(7)
+    )
   end
 end

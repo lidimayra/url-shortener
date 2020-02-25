@@ -18,10 +18,13 @@ RSpec.describe Shortener do
     context 'when original URL does not exist' do
       let(:url) { Url.find_by(original: original) }
 
-      it do
+      before do
+        allow(SecureRandom).to receive(:hex).and_return('f9b5f21')
         call
-        expect(url).to be_present
       end
+
+      it { expect(url).to be_present }
+      it { expect(url.shortened).to eq 'f9b5f21' }
     end
   end
 end
