@@ -5,6 +5,9 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   apt-get update -qq && apt-get install -y nodejs postgresql-client vim && \
   apt-get install -y yarn
 
+# Suppress Ruby 2.7 warnings
+ENV RUBYOPT='-W:no-deprecated -W:no-experimental'
+
 RUN gem install bundler
 WORKDIR url-shortener
 COPY . .
