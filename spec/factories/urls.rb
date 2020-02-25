@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :url do
-    original { 'MyString' }
+    original { 'https://www.website.com' }
     shortened { 'MyString' }
   end
 end

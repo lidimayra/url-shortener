@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/perfectline/validates_url.git
+  revision: 8a28b4b661602f92b4f3595b91751d0dff894a14
+  specs:
+    validate_url (1.0.8)
+      activemodel (>= 3.0.0)
+      public_suffix
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -274,6 +282,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   tzinfo-data
+  validate_url!
   webdrivers
   webpacker (~> 4.0)
 
