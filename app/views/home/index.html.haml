@@ -1,0 +1,7 @@
+%html
+  %body
+    = form_for @url do |f|
+      = f.label :original
+      = f.text_field :original
+
+      = f.submit "Make it short"
