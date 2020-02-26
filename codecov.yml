@@ -1,0 +1,2 @@
+ignore:
+    - "spec/"  # ignore folders and all its contents
