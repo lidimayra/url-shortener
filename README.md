@@ -1,4 +1,4 @@
-[![lidimayra](https://circleci.com/gh/lidimayra/url-shortener/tree/master.svg?style=svg)](https://circleci.com/gh/lidimayra/url-shortener/tree/master)
+[![lidimayra](https://circleci.com/gh/lidimayra/url-shortener/tree/master.svg?style=svg)](https://circleci.com/gh/lidimayra/url-shortener/tree/master) [![codecov.io](http://codecov.io/github/lidimayra/url-shortener/coverage.svg?branch=master)](http://codecov.io/github/lidimayra/url-shortener?branch=master)
 
 # URL Shortener
 
