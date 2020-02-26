@@ -4,13 +4,24 @@ require 'rails_helper'
 
 RSpec.describe 'Urls', type: :request do
   describe 'post /create' do
-    subject(:post_create) do
-      post '/urls', params: { url: { original: 'http://www.bla.com' } }
+    subject(:post_create) { post '/urls', params: { url: { original: url } } }
+
+    context 'with a valid URL' do
+      let(:url) { 'http://www.bla.com' }
+
+      it 'returns http created' do
+        post_create
+        expect(response).to have_http_status(:created)
+      end
     end
 
-    it 'returns http success' do
-      post_create
-      expect(response).to have_http_status(:success)
+    context 'with an invalid URL' do
+      let(:url) { 'blablabla' }
+
+      it 'returns http bad request' do
+        post_create
+        expect(response).to have_http_status(:bad_request)
+      end
     end
   end
 end

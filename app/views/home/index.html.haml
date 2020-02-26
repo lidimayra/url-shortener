@@ -16,14 +16,14 @@
             .form-group
               = f.submit "Make it short", class: 'btn btn-primary'
 
-      - if @url
+      - if @url.present?
         .row
           .col-md-6.col-md-offset-3
             .panel.panel-default
               .panel-heading
                 %span= 'Original URL:'
-                #original.text-muted= @original
+                #original.text-muted= @url.original
               .panel-body
                 %span.panel-info= 'Shortened link:'
-                #shortened= link_to nil, @url
+                #shortened= link_to nil, @shortened_url
 
