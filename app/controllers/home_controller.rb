@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  def index
-    @url = Url.new
-  end
+  def index; end
 end

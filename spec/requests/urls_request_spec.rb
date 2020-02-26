@@ -12,11 +12,5 @@ RSpec.describe 'Urls', type: :request do
       post_create
       expect(response).to have_http_status(:success)
     end
-
-    it 'returns shortened path' do
-      allow(SecureRandom).to receive(:hex).and_return('f9b5f21')
-      post_create
-      expect(response.body).to eq "{\"path\":\"f9b5f21\"}"
-    end
   end
 end

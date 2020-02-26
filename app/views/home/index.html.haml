@@ -1,7 +1,12 @@
 %html
   %body
-    = form_for @url do |f|
+    = form_for Url.new do |f|
       = f.label :original
       = f.text_field :original
 
       = f.submit "Make it short"
+
+    - if @url
+      %span#original= @original
+      %span#shortened= link_to nil, @url
+
