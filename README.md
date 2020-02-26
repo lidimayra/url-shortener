@@ -1,24 +1,27 @@
-# README
+# URL Shortener
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An URL Shortener made with Ruby on Rails. It provides a single-field form where
+a user can enter an URL and receive a shortened version back. When using this
+link, user is redirected to the original website.
 
-Things you may want to cover:
+## Instalation
+Clone the repo:
+```
+git clone git@github.com:lidimayra/url-shortener.git && cd url-shortener
+```
 
-* Ruby version
+This project is built using Docker. To build and run it:
+```
+docker-compose build
+docker-compose up -d
+docker-compose run web bundle exec rake db:schema:load
+```
 
-* System dependencies
+Application will be available on http://localhost:3000/
 
-* Configuration
+## Tests
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run the test suite with:
+```
+docker-compose run web bundle exec rspec
+```
