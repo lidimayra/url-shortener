@@ -1,12 +1,29 @@
 %html
   %body
-    = form_for Url.new do |f|
-      = f.label :original
-      = f.text_field :original
+    .container
+      .row
+        .col-md-6.col-md-offset-3
+          %h1= 'URL Shortener'
+      .row
+        .col-md-6.col-md-offset-3
+          = form_for Url.new do |f|
+            .form-group
+              = f.label :original, 'Enter an URL to be shortened:'
+              = f.text_field :original,
+                class: 'form-control',
+                placeholder: 'https://www.example.com'
 
-      = f.submit "Make it short"
+            .form-group
+              = f.submit "Make it short", class: 'btn btn-primary'
 
-    - if @url
-      %span#original= @original
-      %span#shortened= link_to nil, @url
+      - if @url
+        .row
+          .col-md-6.col-md-offset-3
+            .panel.panel-default
+              .panel-heading
+                %span= 'Original URL:'
+                #original.text-muted= @original
+              .panel-body
+                %span.panel-info= 'Shortened link:'
+                #shortened= link_to nil, @url
 
