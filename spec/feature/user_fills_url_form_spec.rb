@@ -13,11 +13,22 @@ describe 'User fills URL form', type: :feature do
     expect(page).not_to have_selector '#shortened'
   end
 
-  it 'fills the form with an url' do
-    fill_in 'url_original', with: 'https://www.somewebsite.com'
-    click_button 'commit'
+  context 'when filling the form with a valid URL' do
+    it 'renders input and output data to the user' do
+      fill_in 'url_original', with: 'https://www.somewebsite.com'
+      click_button 'commit'
 
-    expect(page.find('#original')).to have_text 'https://www.somewebsite.com'
-    expect(page.find('#shortened')).to have_text 'f9b5f21'
+      expect(page.find('#original')).to have_text 'https://www.somewebsite.com'
+      expect(page.find('#shortened')).to have_text 'http://www.example.com/f9b5f21'
+    end
+  end
+
+  context 'when filling the form with an invalid URL' do
+    it 'renders error messages' do
+      fill_in 'url_original', with: 'Invalid'
+      click_button 'commit'
+
+      expect(page.find('.alert')).to have_text 'is not a valid URL'
+    end
   end
 end

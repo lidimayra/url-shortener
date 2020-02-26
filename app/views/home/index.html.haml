@@ -19,11 +19,16 @@
       - if @url.present?
         .row
           .col-md-6.col-md-offset-3
-            .panel.panel-default
-              .panel-heading
-                %span= 'Original URL:'
-                #original.text-muted= @url.original
-              .panel-body
-                %span.panel-info= 'Shortened link:'
-                #shortened= link_to nil, @shortened_url
+            - if @url.errors.any?
+              .alert.alert-danger
+                - @url.errors.each do |attr, message|
+                  %p= "#{attr}: #{message}"
+            - else
+              .panel.panel-default
+                .panel-heading
+                  %span= 'Original URL:'
+                  #original.text-muted= @url.original
+                .panel-body
+                  %span.panel-info= 'Shortened link:'
+                  #shortened= link_to nil, @shortened_url
 
