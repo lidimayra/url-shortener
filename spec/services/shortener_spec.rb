@@ -12,7 +12,7 @@ RSpec.describe Shortener do
     context 'when original URL already exists' do
       before { create(:url, original: original, shortened: shortened) }
 
-      it { is_expected.to eq shortened }
+      it { expect(call.shortened).to eq shortened }
     end
 
     context 'when original URL does not exist' do

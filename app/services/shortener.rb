@@ -14,7 +14,7 @@ class Shortener
   def call
     url = Url.find_by(original: original_url)
 
-    url ? url.shortened : create_url(original_url).shortened
+    url ||= create_url(original_url)
   end
 
   private

@@ -11,7 +11,7 @@ class UrlsController < ApplicationController
 
   def set_url
     original = url_params[:original]
-    @url = Url.find_by(original: original, shortened: Shortener.call(original))
+    @url = Shortener.call(original)
   end
 
   def set_shortened_url
