@@ -1,3 +1,5 @@
+[![lidimayra](https://circleci.com/gh/lidimayra/url-shortener/tree/master.svg?style=svg)](https://circleci.com/gh/lidimayra/url-shortener/tree/master)
+
 # URL Shortener
 
 An URL Shortener made with Ruby on Rails. It provides a single-field form where
