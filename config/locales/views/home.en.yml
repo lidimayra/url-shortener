@@ -1,0 +1,10 @@
+en:
+  home:
+    index:
+      english: English
+      enter-url: Enter an URL to be shortened
+      example-url: https://www.example.com
+      german: German
+      portuguese: Portuguese
+      submit: Make it short
+      url-shortener: URL Shortener

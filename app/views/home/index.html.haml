@@ -3,18 +3,18 @@
     .container
       .row
         .col-md-6.col-md-offset-3
-          %h1= t('url-shortener')
+          %h1= t('.url-shortener')
       .row
         .col-md-6.col-md-offset-3
           = form_for Url.new do |f|
             .form-group
-              = f.label :original, t('enter-url')
+              = f.label :original, t('.enter-url')
               = f.text_field :original,
                 class: 'form-control',
-                placeholder: t('example-url')
+                placeholder: t('.example-url')
 
             .form-group
-              = f.submit t('submit'), class: 'btn btn-primary'
+              = f.submit t('.submit'), class: 'btn btn-primary'
 
       - if @url.present?
         .row
@@ -34,8 +34,8 @@
 
       .row
         .col-md-6.col-md-offset-3
-          = link_to t('english'), root_url(locale: :en)
+          = link_to t('.english'), root_url(locale: :en)
           |
-          = link_to t('portuguese'), root_url(locale: :pt)
+          = link_to t('.portuguese'), root_url(locale: :pt)
           |
-          = link_to t('german'), root_url(locale: :de)
+          = link_to t('.german'), root_url(locale: :de)

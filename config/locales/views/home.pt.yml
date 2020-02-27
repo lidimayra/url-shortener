@@ -1,0 +1,10 @@
+pt:
+  home:
+    index:
+      english: Inglês
+      enter-url: Informe a URL a ser encurtada
+      example-url: https://www.exemplo.com.br
+      german: Alemão
+      portuguese: Português
+      submit: Encurtar
+      url-shortener: Encurtador de URL

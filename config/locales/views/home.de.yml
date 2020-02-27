@@ -1,0 +1,10 @@
+de:
+  home:
+    index:
+      english: Englisch
+      enter-url: Geben Sie einen URL
+      example-url: https://www.beispiel.de
+      german: Deutsche
+      portuguese: Portugiesisch
+      submit: Kürzen
+      url-shortener: URL Kürzer
