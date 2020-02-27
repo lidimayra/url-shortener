@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    attributes:
+      url:
+        original: URL
+        shortened: Shortened link
+
+

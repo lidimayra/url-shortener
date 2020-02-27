@@ -22,14 +22,14 @@
             - if @url.errors.any?
               .alert.alert-danger
                 - @url.errors.each do |attr, message|
-                  %p= "#{attr}: #{message}"
+                  %p= "#{Url.human_attribute_name attr}: #{message}"
             - else
               .panel.panel-default
                 .panel-heading
-                  %span= 'Original URL:'
+                  %span= Url.human_attribute_name :original
                   #original.text-muted= @url.original
                 .panel-body
-                  %span.panel-info= 'Shortened link:'
+                  %span.panel-info= Url.human_attribute_name :shortened
                   #shortened= link_to nil, @shortened_url
 
       .row

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class UrlsController < ApplicationController
+  around_action :switch_locale
+
   def create
     set_url
     set_shortened_url

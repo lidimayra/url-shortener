@@ -1,0 +1,13 @@
+pt:
+  activerecord:
+    attributes:
+      url:
+        original: URL
+        shortened: Link encurtado
+    errors:
+      models:
+        url:
+          attributes:
+            original:
+              url: não é uma URL válida
+
