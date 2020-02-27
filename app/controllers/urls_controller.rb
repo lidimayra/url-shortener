@@ -3,6 +3,10 @@
 class UrlsController < ApplicationController
   around_action :switch_locale
 
+  def index
+    redirect_to root_path
+  end
+
   def create
     set_url
     set_shortened_url
