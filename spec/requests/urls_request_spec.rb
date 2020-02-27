@@ -9,10 +9,9 @@ RSpec.describe 'Urls', type: :request do
     context 'with a valid URL' do
       let(:url) { 'http://www.bla.com' }
 
-      it 'returns http created' do
-        post_create
-        expect(response).to have_http_status(:created)
-      end
+      before { post_create }
+
+      it { expect(response).to have_http_status(:created) }
     end
 
     context 'with an invalid URL' do

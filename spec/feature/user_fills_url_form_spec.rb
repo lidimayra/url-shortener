@@ -11,6 +11,14 @@ describe 'User fills URL form', type: :feature do
   it 'accesses the homepage' do
     expect(page).not_to have_selector '#original'
     expect(page).not_to have_selector '#shortened'
+    expect(page.find('h1')).to have_text 'URL Shortener'
+  end
+
+  context 'when selecting a different language' do
+    it 'renders a translated page' do
+      click_link 'German'
+      expect(page.find('h1')).to have_text 'URL Kürzer'
+    end
   end
 
   context 'when filling the form with a valid URL' do

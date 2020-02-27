@@ -3,18 +3,18 @@
     .container
       .row
         .col-md-6.col-md-offset-3
-          %h1= 'URL Shortener'
+          %h1= t('url-shortener')
       .row
         .col-md-6.col-md-offset-3
           = form_for Url.new do |f|
             .form-group
-              = f.label :original, 'Enter an URL to be shortened:'
+              = f.label :original, t('enter-url')
               = f.text_field :original,
                 class: 'form-control',
-                placeholder: 'https://www.example.com'
+                placeholder: t('example-url')
 
             .form-group
-              = f.submit "Make it short", class: 'btn btn-primary'
+              = f.submit t('submit'), class: 'btn btn-primary'
 
       - if @url.present?
         .row
@@ -32,3 +32,10 @@
                   %span.panel-info= 'Shortened link:'
                   #shortened= link_to nil, @shortened_url
 
+      .row
+        .col-md-6.col-md-offset-3
+          = link_to t('english'), root_url(locale: :en)
+          |
+          = link_to t('portuguese'), root_url(locale: :pt)
+          |
+          = link_to t('german'), root_url(locale: :de)
