@@ -6,6 +6,14 @@ An URL Shortener made with Ruby on Rails. It provides a single-field form where
 a user can enter an URL and receive a shortened version back. When using this
 link, user is redirected to the original website.
 
+Once a valid URL is submitted, it is recorded to the database, so it can be
+used for unlimited period. Each URL is unique, therefore, once an URL is
+shortened, any attempt to short the same URL again, will result in the same
+shortened link.
+
+The app is available in three languages: English :us:, Portuguese :brazil: and
+German :de:.
+
 ## Instalation
 Clone the repo:
 ```
