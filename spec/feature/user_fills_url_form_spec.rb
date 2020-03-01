@@ -18,7 +18,6 @@ describe 'User fills URL form', type: :feature, js: true do
 
   context 'when selecting a different language' do
     it 'renders a translated page' do
-      pending
       click_link 'German'
       expect(h1).to have_text 'URL Kürzer'
     end
@@ -42,18 +41,17 @@ describe 'User fills URL form', type: :feature, js: true do
         fill_in 'url_original', with: 'Invalid'
         page.find('input[type="submit"]').click
 
-        expect(alert).to have_text 'URL: is not a valid URL'
+        expect(alert).to have_text 'Enter a valid URL and try again.'
       end
     end
 
     context 'with a locale' do
       it 'renders error messages in the selected language' do
-        pending
         click_link 'Portuguese'
         fill_in 'url_original', with: 'Invalid'
         page.find('input[type="submit"]').click
 
-        expect(alert).to have_text 'URL: não é uma URL válida'
+        expect(alert).to have_text 'Informe uma URL válida e tente novamente.'
       end
     end
   end

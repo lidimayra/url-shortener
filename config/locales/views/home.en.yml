@@ -6,5 +6,6 @@ en:
       example-url: https://www.example.com
       german: German
       portuguese: Portuguese
+      submission-error: Enter a valid URL and try again.
       submit: Make it short
       url-shortener: URL Shortener

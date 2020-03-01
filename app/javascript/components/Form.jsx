@@ -1,9 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import axios from 'axios';
+import I18n from 'i18n-js';
+
 class Form extends React.Component {
 
   constructor(props) {
+    I18n.locale = props.locale || "en";
+
     super(props);
     this.state = {
       hasUrlDivClass: "hidden",
@@ -39,7 +43,7 @@ class Form extends React.Component {
         this.setState(state =>  ({
           hasError: "",
           hasUrlDivClass: "",
-          urlError: "URL: is not a valid URL",
+          urlError: I18n.t('home.index.submission-error'),
           hasShortenedUrlClass: "hidden",
         }))
       });
@@ -50,7 +54,7 @@ class Form extends React.Component {
       <div>
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
-            <h1>URL Shortener</h1>
+            <h1>{I18n.t('home.index.url-shortener')}</h1>
           </div>
         </div>
 
@@ -59,14 +63,14 @@ class Form extends React.Component {
             <form className="new_url" onSubmit={this.handleSubmit} method="post">
               <div className="form-group">
                 <label htmlFor="url_original"/>
-                  <strong>Enter an URL to be shortened</strong>
+                  <strong>{I18n.t('home.index.enter-url')}</strong>
                 <input className="form-control" type="text" id="url_original"
-                name="url[original]" placeholder="https://www.example.com"
+                name="url[original]" placeholder={I18n.t('home.index.example-url')}
                 onChange={this.handleOriginalUrlChange} />
               </div>
 
               <div className="form-group">
-                <input type="submit" value="Make it short" className="btn btn-primary"/>
+                <input type="submit" value={I18n.t('home.index.submit')} className="btn btn-primary"/>
               </div>
             </form>
           </div>
@@ -80,7 +84,7 @@ class Form extends React.Component {
 
             <div className={"panel panel-default "+this.state.hasShortenedUrlClass}>
               <div className="panel-heading">
-                <span>Original URL</span>
+                <span>{I18n.t('activerecord.attributes.url.original')}</span>
                 <div id="original" className="text-muted">
                   {this.state.originalUrl}
                 </div>
@@ -88,7 +92,7 @@ class Form extends React.Component {
 
               <div className="panel-body">
                 <span className="panel-info">
-                  Shortened URL
+                  {I18n.t('activerecord.attributes.url.shortened')}
                 </span>
                 <div id="shortened">
                   <a href={this.state.shortenedUrl}>

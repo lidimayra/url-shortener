@@ -6,5 +6,6 @@ de:
       example-url: https://www.beispiel.de
       german: Deutsche
       portuguese: Portugiesisch
+      submission-error: Geben Sie eine gültige URL ein und versuchen Sie es erneut.
       submit: Kürzen
       url-shortener: URL Kürzer
