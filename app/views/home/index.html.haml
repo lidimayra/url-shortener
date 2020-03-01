@@ -1,41 +1,10 @@
-%html
-  %body
-    .container
-      .row
-        .col-md-6.col-md-offset-3
-          %h1= t('.url-shortener')
-      .row
-        .col-md-6.col-md-offset-3
-          = form_for Url.new do |f|
-            .form-group
-              = f.label :original, t('.enter-url')
-              = f.text_field :original,
-                class: 'form-control',
-                placeholder: t('.example-url')
+.container
+  = react_component 'Form'
 
-            .form-group
-              = f.submit t('.submit'), class: 'btn btn-primary'
-
-      - if @url.present?
-        .row
-          .col-md-6.col-md-offset-3
-            - if @url.errors.any?
-              .alert.alert-danger
-                - @url.errors.each do |attr, message|
-                  %p= "#{Url.human_attribute_name attr}: #{message}"
-            - else
-              .panel.panel-default
-                .panel-heading
-                  %span= Url.human_attribute_name :original
-                  #original.text-muted= @url.original
-                .panel-body
-                  %span.panel-info= Url.human_attribute_name :shortened
-                  #shortened= link_to nil, @shortened_url
-
-      .row
-        .col-md-6.col-md-offset-3
-          = link_to t('.english'), root_url(locale: :en)
-          |
-          = link_to t('.portuguese'), root_url(locale: :pt)
-          |
-          = link_to t('.german'), root_url(locale: :de)
+  .row
+    .col-md-6.col-md-offset-3
+      = link_to t('.english'), root_url(locale: :en)
+      |
+      = link_to t('.portuguese'), root_url(locale: :pt)
+      |
+      = link_to t('.german'), root_url(locale: :de)
