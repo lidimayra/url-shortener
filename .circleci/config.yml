@@ -45,4 +45,4 @@ jobs:
       - run: bundle exec rails assets:precompile
 
       # Run the tests
-      - run: bundle exec rake
+      - run: bundle exec rspec --exclude-pattern "spec/feature/**"
