@@ -25,7 +25,13 @@ RSpec.describe 'Urls', type: :request do
 
       it 'returns http bad request' do
         post_create
-        expect(response).to have_http_status(:bad_request)
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+
+      it 'returns error message' do
+        post_create
+        errors = JSON.parse(response.body)['errors']
+        expect(errors['original']).to include 'is not a valid URL'
       end
     end
   end

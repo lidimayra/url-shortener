@@ -10,7 +10,8 @@ class UrlsController < ApplicationController
   def create
     set_url
     set_shortened_url
-    render 'home/index', status: (@url&.valid? ? :created : :bad_request)
+    render json: { url: @url, errors: @url.errors },
+           status: (@url&.valid? ? :created : :unprocessable_entity)
   end
 
   private
