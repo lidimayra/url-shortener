@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import axios from 'axios';
 import I18n from 'i18n-js';
 
+import FormFields from './FormFields';
 import {UrlError, UrlInfo} from './UrlInfoSection';
 
 class Form extends React.Component {
@@ -11,7 +12,6 @@ class Form extends React.Component {
 
     super(props);
     this.state = {
-      hasUrlDivClass: "hidden",
       urlError: "",
       originalUrl: "",
       shortenedUrl: ""
@@ -27,8 +27,6 @@ class Form extends React.Component {
       .post('/urls', { url: { original: e.target[0].value } })
       .then((response) => {
         this.setState(state =>  ({
-          hasUrlDivClass: "",
-          hasShortenedUrlClass: "",
           originalUrl: response.data.url.original,
           shortenedUrl: response.data.url.shortened,
           urlError: ""
@@ -36,11 +34,9 @@ class Form extends React.Component {
       })
       .catch((error) => {
         this.setState(state =>  ({
-          hasUrlDivClass: "",
-          urlError: I18n.t('home.index.submission-error'),
-          hasShortenedUrlClass: "hidden",
           originalUrl: "",
           shortenedUrl: "",
+          urlError: I18n.t('home.index.submission-error'),
         }))
       });
   }
@@ -67,23 +63,12 @@ class Form extends React.Component {
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
             <form className="new_url" onSubmit={this.handleSubmit} method="post">
-              <div className="form-group">
-                <label htmlFor="url_original"/>
-                  <strong>{I18n.t('home.index.enter-url')}</strong>
-                <input className="form-control" type="text" id="url_original"
-                name="url[original]" placeholder={I18n.t('home.index.example-url')}/>
-              </div>
-
-              <div className="form-group">
-                <input type="submit" value={I18n.t('home.index.submit')} className="btn btn-primary"/>
-              </div>
+              <FormFields/>
             </form>
           </div>
         </div>
 
-        <div className={`row ${this.state.hasUrlDivClass}`}>
-          <div className="col-md-6 col-md-offset-3">{urlDetails}</div>
-        </div>
+        <div className="col-md-6 col-md-offset-3">{urlDetails}</div>
       </div>
     );
   }
