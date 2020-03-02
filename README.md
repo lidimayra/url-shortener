@@ -2,9 +2,9 @@
 
 # URL Shortener
 
-An URL Shortener made with Ruby on Rails. It provides a single-field form where
-a user can enter an URL and receive a shortened version back. When using this
-link, user is redirected to the original website.
+An URL Shortener made with Ruby on Rails and ReactJS. It provides a single-field
+form where a user can enter an URL and receive a shortened version back. When
+using this link, user is redirected to the original website.
 
 Once a valid URL is submitted, it is recorded to the database, so it can be
 used for unlimited period. Each URL is unique, therefore, once an URL is
@@ -31,7 +31,44 @@ Application will be available on http://localhost:3000/
 
 ## Tests
 
-Run the test suite with:
+Tests are built using RSpec/Capybara. Run the test suite with:
 ```
 docker-compose run web bundle exec rspec
 ```
+
+## URL Shortener endpoint
+It is possible to use the URL shortener through an endpoint as well. In order to
+do that, a _POST_ request to `/urls` is required. It expects to receive a
+request body parameter containing an URL object.
+
+e.g.:
+```json
+{
+    "url": {
+        "id": 5,
+        "original":
+"https://www.google.com/search?q=lorem+ipsum&oq=Lorem+Ipsu&aqs=chrome.0.0l2j69i57j0l5.7932j0j7&sourceid=chrome&ie=UTF-8",
+        "shortened": "2c1a1ed",
+        "created_at": "2020-03-02T04:13:03.050Z",
+        "updated_at": "2020-03-02T04:13:03.050Z"
+    },
+    "errors": {}
+}
+```
+
+Would return something like:
+```json
+{
+    "url": {
+        "id": 5,
+        "original":
+"https://www.google.com/search?q=lorem+ipsum&oq=Lorem+Ipsu&aqs=chrome.0.0l2j69i57j0l5.7932j0j7&sourceid=chrome&ie=UTF-8",
+        "shortened": "2c1a1ed",
+        "created_at": "2020-03-02T04:13:03.050Z",
+        "updated_at": "2020-03-02T04:13:03.050Z"
+    },
+    "errors": {}
+}
+```
+Therefore, if the request is performed from http://localhost:3000, it means that
+the shortened link in this scenario would be http://localhost:3000/2c1a1ed.
