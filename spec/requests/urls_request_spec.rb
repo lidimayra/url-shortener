@@ -3,12 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Urls', type: :request do
-  describe 'get /index' do
-    subject { get '/urls' }
-
-    it { is_expected.to redirect_to root_path }
-  end
-
   describe 'post /create' do
     subject(:post_create) { post '/urls', params: { url: { original: url } } }
 
