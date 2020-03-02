@@ -45,13 +45,8 @@ e.g.:
 ```json
 {
     "url": {
-        "id": 5,
-        "original": "https://www.google.com/search?q=lorem+ipsum",
-        "shortened": "2c1a1ed",
-        "created_at": "2020-03-02T04:13:03.050Z",
-        "updated_at": "2020-03-02T04:13:03.050Z"
-    },
-    "errors": {}
+        "original": "https://www.google.com/search?q=lorem+ipsum"
+    }
 }
 ```
 
