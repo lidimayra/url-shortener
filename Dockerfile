@@ -25,6 +25,8 @@ ADD Gemfile* /
 RUN bundle update --bundler
 
 RUN bundle install
+RUN yarn install --check-files
+
 RUN bundle exec rails webpacker:install
 RUN bundle exec rails webpacker:install:react
 RUN bundle exec rails generate react:install
