@@ -1,9 +1,11 @@
 import React from 'react';
 import I18n from 'i18n-js';
 
-export const UrlError = ({errorMsg}) => {
+export const UrlError = () => {
   return (
-    <div className="alert alert-danger">{errorMsg}</div>
+    <div className="alert alert-danger">
+      {I18n.t('home.index.submission-error')}
+    </div>
   );
 };
 

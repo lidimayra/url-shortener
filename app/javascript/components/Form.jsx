@@ -12,9 +12,9 @@ class Form extends React.Component {
 
     super(props);
     this.state = {
-      urlError: "",
       originalUrl: "",
-      shortenedUrl: ""
+      shortenedUrl: "",
+      urlError: false
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,14 +29,14 @@ class Form extends React.Component {
         this.setState(state =>  ({
           originalUrl: response.data.url.original,
           shortenedUrl: response.data.url.shortened,
-          urlError: ""
+          urlError: false
         }))
       })
       .catch((error) => {
         this.setState(state =>  ({
           originalUrl: "",
           shortenedUrl: "",
-          urlError: I18n.t('home.index.submission-error'),
+          urlError: true,
         }))
       });
   }
@@ -45,7 +45,7 @@ class Form extends React.Component {
     let urlDetails;
 
     if (this.state.urlError) {
-      urlDetails = <UrlError errorMsg={this.state.urlError}/>
+      urlDetails = <UrlError/>
     } else if (this.state.originalUrl && this.state.shortenedUrl) {
       urlDetails = <UrlInfo
         original={this.state.originalUrl}
