@@ -10,6 +10,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'support/factory_bot'
 require 'support/shoulda_matchers'
+require 'support/capybara'
 require 'validate_url/rspec_matcher'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -65,5 +66,3 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include Capybara::DSL
 end
-
-Capybara.javascript_driver = :selenium_chrome_headless
