@@ -24,7 +24,7 @@ This project is built using Docker. To build and run it:
 ```
 docker-compose build
 docker-compose up -d
-docker-compose run web bundle exec rake db:schema:load
+docker-compose run web bundle exec rake db:setup
 ```
 
 Application will be available on http://localhost:3000/
@@ -46,8 +46,7 @@ e.g.:
 {
     "url": {
         "id": 5,
-        "original":
-"https://www.google.com/search?q=lorem+ipsum&oq=Lorem+Ipsu&aqs=chrome.0.0l2j69i57j0l5.7932j0j7&sourceid=chrome&ie=UTF-8",
+        "original": "https://www.google.com/search?q=lorem+ipsum",
         "shortened": "2c1a1ed",
         "created_at": "2020-03-02T04:13:03.050Z",
         "updated_at": "2020-03-02T04:13:03.050Z"
@@ -61,8 +60,7 @@ Would return something like:
 {
     "url": {
         "id": 5,
-        "original":
-"https://www.google.com/search?q=lorem+ipsum&oq=Lorem+Ipsu&aqs=chrome.0.0l2j69i57j0l5.7932j0j7&sourceid=chrome&ie=UTF-8",
+        "original": "https://www.google.com/search?q=lorem+ipsum",
         "shortened": "2c1a1ed",
         "created_at": "2020-03-02T04:13:03.050Z",
         "updated_at": "2020-03-02T04:13:03.050Z"
@@ -70,5 +68,7 @@ Would return something like:
     "errors": {}
 }
 ```
-Therefore, if the request is performed from http://localhost:3000, it means that
-the shortened link in this scenario would be http://localhost:3000/2c1a1ed.
+
+`url.shortened` corresponds to path. Therefore, if the request is performed
+from http://localhost:3000, it means that the shortened link in this scenario
+would be http://localhost:3000/2c1a1ed.
