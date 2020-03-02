@@ -3,13 +3,11 @@ import I18n from 'i18n-js';
 
 const LanguageSelector = () => {
   return (
-    <div className="row">
-      <div className="col-md-6 col-md-offset-3">
-        <LanguageLink locale="en" name="english"/>    <span>| </span>
-        <LanguageLink locale="pt" name="portuguese"/> <span>| </span>
-        <LanguageLink locale="de" name="german"/>
-      </div>
-    </div>
+    <span>
+      <LanguageLink locale="en" name="english"/>    <span>| </span>
+      <LanguageLink locale="pt" name="portuguese"/> <span>| </span>
+      <LanguageLink locale="de" name="german"/>
+    </span>
   );
 };
 

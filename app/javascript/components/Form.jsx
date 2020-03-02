@@ -63,15 +63,21 @@ class Form extends React.Component {
 
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
-            <form className="new_url" onSubmit={this.handleSubmit} method="post">
+            <form className="new_url" onSubmit={this.handleSubmit}>
               <FormFields/>
             </form>
           </div>
         </div>
 
-        <div className="col-md-6 col-md-offset-3">{urlDetails}</div>
+        <div className="row">
+          <div className="col-md-6 col-md-offset-3">{urlDetails}</div>
+        </div>
 
-        <LanguageSelector/>
+        <div className="row">
+          <div className="col-md-6 col-md-offset-3">
+            <LanguageSelector/>
+          </div>
+        </div>
       </div>
     );
   }
