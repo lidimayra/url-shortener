@@ -4,6 +4,7 @@ import axios from 'axios';
 import I18n from 'i18n-js';
 
 import FormFields from './FormFields';
+import LanguageSelector from './LanguageSelector';
 import {UrlError, UrlInfo} from './UrlInfoSection';
 
 class Form extends React.Component {
@@ -53,7 +54,7 @@ class Form extends React.Component {
     }
 
     return (
-      <div>
+      <div className="container">
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
             <h1>{I18n.t('home.index.url-shortener')}</h1>
@@ -69,6 +70,8 @@ class Form extends React.Component {
         </div>
 
         <div className="col-md-6 col-md-offset-3">{urlDetails}</div>
+
+        <LanguageSelector/>
       </div>
     );
   }
