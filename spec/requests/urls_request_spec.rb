@@ -8,10 +8,13 @@ RSpec.describe 'Urls', type: :request do
 
     context 'with a valid URL' do
       let(:url) { 'http://www.bla.com' }
+      let(:response_url) { JSON.parse(response.body)['url'] }
 
       before { post_create }
 
       it { expect(response).to have_http_status(:created) }
+      it { expect(response_url['original']).to eq url }
+      it { expect(response_url['shortened']).to be_present }
     end
 
     context 'with an invalid URL' do
