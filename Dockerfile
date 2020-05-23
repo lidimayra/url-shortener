@@ -19,7 +19,6 @@ ENV RUBYOPT='-W:no-deprecated -W:no-experimental'
 
 RUN gem install bundler
 WORKDIR url-shortener
-COPY . .
 
 ADD Gemfile* /
 RUN bundle update --bundler
@@ -31,3 +30,5 @@ RUN bundle exec rails webpacker:install
 RUN bundle exec rails webpacker:install:react
 RUN bundle exec rails generate react:install
 RUN bundle exec rails webpacker:install:erb
+
+COPY . .
