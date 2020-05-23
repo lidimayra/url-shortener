@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/url-shortener
     docker:
-      - image: circleci/ruby:2.7.0-node-browsers
+      - image: circleci/ruby:2.7.1-node-browsers
         environment:
           BUNDLER_VERSION: 2.1.2
           PGHOST: 127.0.0.1
@@ -13,7 +13,7 @@ jobs:
           NODE_ENV: test
       - image: postgres:alpine
         environment:
-          BUNDLER_VERSION: 2.1.2
+          BUNDLER_VERSION: 2.1.4
           POSTGRES_USER: admin
           POSTGRES_PASSWORD: admin
           POSTGRES_DB: url_shortener_test
