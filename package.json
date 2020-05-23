@@ -2,11 +2,12 @@
   "name": "url_shortener",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.0.0-0",
     "@babel/preset-react": "^7.8.3",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "4.2.2",
+    "@rails/webpacker": "5.1.1",
     "axios": "0.19.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "i18n-js": "^3.5.1",
@@ -15,7 +16,8 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react_ujs": "^2.6.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "webpack": "^2.0.0 || >= 3.0.0-rc.0 || ^3.0.0"
   },
   "version": "0.1.0",
   "devDependencies": {
