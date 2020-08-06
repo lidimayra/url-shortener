@@ -1,0 +1,11 @@
+es:
+  home:
+    index:
+      english: xpto
+      enter-url: xpto
+      example-url: "https://www.example.com"
+      german: xpto
+      portuguese: xpto
+      submission-error: xpto
+      submit: xpto
+      url-shortener: xpto
