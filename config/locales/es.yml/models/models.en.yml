@@ -1,0 +1,8 @@
+es:
+  activerecord:
+    attributes:
+      url:
+        original: testing
+        shortened: testing
+
+
