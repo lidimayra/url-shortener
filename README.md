@@ -14,7 +14,7 @@ shortened link.
 The app is available in three languages: English :us:, Portuguese :brazil: and
 German :de:.
 
-## Instalation
+## Installation
 Clone the repo:
 ```
 git clone git@github.com:lidimayra/url-shortener.git && cd url-shortener
