@@ -7,7 +7,7 @@ gem 'haml-rails', '~> 2.0'
 gem 'i18n-js'
 gem 'pg', '~> 1.2', '>= 1.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
+gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use Puma as the app server
 gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
