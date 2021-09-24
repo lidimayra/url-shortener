@@ -14,6 +14,13 @@ RUN rm /chrome.deb
 RUN curl https://chromedriver.storage.googleapis.com/81.0.4044.20/chromedriver_linux64.zip -o /usr/local/bin/chromedriver
 RUN chmod +x /usr/local/bin/chromedriver
 
+# start Xvfb using entrypoint (required for running headless tests on ci)
+RUN apt-get install -y xvfb
+ENV DISPLAY :99
+RUN printf '#!/bin/sh\nXvfb :99 -screen 0 1280x1024x24 &\nexec "$@"\n' > /tmp/entrypoint && \
+  chmod +x /tmp/entrypoint && \
+  mv /tmp/entrypoint /docker-entrypoint.sh
+
 # Suppress Ruby 2.7 warnings
 ENV RUBYOPT='-W:no-deprecated -W:no-experimental'
 
