@@ -1,5 +1,13 @@
 FROM ruby:2.7.1
 
+
+# Use node v14
+RUN apt-get update \
+  && apt-get install -y apt-transport-https curl \
+  && curl -sS https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - \
+  && echo "deb https://deb.nodesource.com/node_14.x focal main" \
+    > /etc/apt/sources.list.d/nodesource.list
+
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
   apt-get update -qq && apt-get install -y nodejs postgresql-client vim && \
