@@ -26,7 +26,7 @@ jobs:
         key: url-shortener-{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: bundle check --path vendor/bundle || bundle install --path vendor/bundle
 
       # Cache Dependencies
       - type: cache-save
