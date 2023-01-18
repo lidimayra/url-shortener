@@ -170,7 +170,7 @@ GEM
     puma (4.3.7)
       nio4r (~> 2.0)
     racc (1.6.0)
-    rack (2.2.3)
+    rack (2.2.6.2)
     rack-proxy (0.7.0)
       rack
     rack-test (1.1.0)
@@ -317,7 +317,6 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
-  ruby
   x86_64-linux
 
 DEPENDENCIES
